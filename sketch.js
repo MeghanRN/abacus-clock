@@ -132,32 +132,6 @@ function drawShelf() {
   rect(0, dims.top + dims.height, width, dims.beadR * 0.9);
 }
 
-function drawColons() {
-  const count = cols.length;
-  const add = (idx) => {
-    const x = dims.margin + (idx - 0.4) * dims.spacing;
-    noStroke(); fill(THEME.accent);
-    const d = dims.beadR * 0.72;
-    circle(x, dims.beamY - dims.beadR * 1.6, d);
-    circle(x, dims.beamY + dims.beadR * 1.6, d);
-  };
-  add(2);
-  if (count === 6) add(4);
-}
-
-function drawLabel(hDisplay, mn, sc, isAM) {
-  const ampm = USE_12_HOUR ? (isAM ? 'AM' : 'PM') : '';
-  textAlign(CENTER, CENTER);
-  noStroke();
-  fill(THEME.label);
-  textSize(min(width, height) * 0.06);
-  text(`${nf(hDisplay,2)}:${nf(mn,2)}:${nf(sc,2)} ${ampm}`, width / 2, dims.top - dims.beadR * 2.1);
-
-  fill(THEME.labelDim);
-  textSize(min(width, height) * 0.027);
-  text('Read: heaven bead down = +5, earth beads up = count of +1s', width / 2, dims.top + dims.height + dims.beadR * 1.8);
-}
-
 /* ======================= SorobanDigit =========================
  * Earth beads are TOP→BOTTOM: ey[0] is highest, ey[3] is lowest.
  * Targets are built the same way, so spacing can enforce y[i] >= y[i-1] + minGap.
