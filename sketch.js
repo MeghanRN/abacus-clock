@@ -111,9 +111,6 @@ function draw() {
     cols[i].setDigit(int(digitsStr[i]));
     cols[i].updateAndDraw();
   }
-
-  drawColons();
-  drawLabel(displayHr, mn, sc, rawHr < 12);
 }
 
 function drawShelf() {
