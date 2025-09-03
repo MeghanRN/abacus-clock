@@ -1,27 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Abacus Clock</title>
-    <!-- Load p5.js from CDN --
+    <meta charset="utf-8" />
+    <title>p5 Self-Test</title>
+    <style>body{margin:0;background:#222;color:#eee;font-family:system-ui} pre{white-space:pre-wrap}</style>
+    <script>
+      window.addEventListener('error', e => {
+        const box = document.createElement('pre');
+        box.textContent = 'Error: ' + e.message;
+        document.body.appendChild(box);
+      });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.min.js"></script>
-    <style>
-      body {
-        margin: 0;
-        background: #0e1014;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-      }
-      canvas {
-        max-width: 100%;
-        height: auto;
-      }
-    </style>
+    <script>
+      function setup(){ createCanvas(400, 300); }
+      function draw(){ background(40); fill(255); noStroke(); circle(width/2, height/2, 120); }
+      console.log('p5 loaded OK');
+    </script>
   </head>
-  <body>
-    <!-- Your sketch code -->
-    <script src="sketch.js"></script>
-  </body>
+  <body></body>
 </html>
